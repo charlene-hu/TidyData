@@ -24,8 +24,7 @@ LAYING
 ```
 
 **feature variables** 3 - 68
-feature variable name: numeric, normalized and bounded
-feature variables from column 3 to column 68 are as follows:
+feature variable name: numeric, normalized and bounded. Feature variable names from column 3 to column 68 are as follows:
 
 ```s
 fBodyAcc-mean()-X

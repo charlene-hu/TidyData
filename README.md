@@ -1,33 +1,36 @@
 ### Overview
 
-The **run_analysis.R** script creates a tidy data set **tidydata.txt** using data collected from the accelerometers from the Samsung Galaxy S smartphone [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ).  A full description is available at the site where the data was obtained: [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+The **run_analysis.R** scripts create a tidy data set **tidydata.txt** using data collected from the accelerometers from the Samsung Galaxy S smartphone [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ).  A full description is available at the site where the data was obtained: [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-The run_analysis.R script performs the following tasks:
+The run_analysis.R scripts perform the following tasks:
 
-1. Load raw data files
-2. Combine datasets and reshape the resulting dataset.
+1. Load raw data files.
+2. Combine datasets and reshape the combined dataset.
 3. Label activity and feature with descriptive names.
-4. Extract data of mean and standard deviation features and reshape the resulting dataset.
+4. Extract data of mean and standard deviation features and reshape the extracted dataset.
 5. Export the extracted dataset as tidydata.txt.
 
 
-### How to run the script
+### How to run the scripts
 
 Before running run_analysis.R, install below packages if you you do not have them installed already.
 
 ```S
 install.packages("reshape")
-
 install.packages("stringr")
 ```
 
-To generate tidydata.txt using run_analysis script, perform the following steps:
+To generate tidydata.txt using run_analysis.R, perform the following steps:
 
-1. Use source() to load run_analysis.R script. You must provide a correct path to the script. Eg. source('~/TidyData/run_analysis.R')
+1. Use source() to load run_analysis.R script file. You must provide a correct path to the script file. For example:
+
+```s
+source('~/TidyData/run_analysis.R')
+```
 
 2. Enter working directory when prompted and hit enter. Working directory should be the directory that contains test directory, train directory, features.txt, activity_labels.txt, etc.
 
-3. If the script runs successfully, you should see below messages in the console. And tidydata.txt file should be created in the working directory.
+3. If the scripts run successfully, you should see below messages in the console. And tidydata.txt file should be created in the working directory.
 
 ```s
 setting directory...
@@ -46,23 +49,26 @@ result dataset tidydata.txt created
 ```
 
 ### How the scripts work
-
-1. Load raw data files using read.table(). Files loaded are:
-  a. activity_labels.txt
-  b. features.txt
-  c. /test/subject_test.txt
-  d. /test/X_test.txt 
-  e. /test/y_test.txt
-  f. /train/subject_train.txt
-  g. /train/X_train.txt
-  h. /train/y_train.txt
-2. Combine training subjects, labels and measurements into one dataset using cbind.
-3. Combine test subjects, labels and measurements into one dataset using cbind
-4. Combine the training dataset and test dataset created in step 2 and step 3 using rbind.
-5. Melt the dataset created in step 4 from wide format to narrow format preparing for labeling activity and feature names in step 6.
-6. Merge activity_labels and features datasets with tidy dataset to label activity and feature with descriptive names.
-7. Extract data of mean and standard deviation features using grepl then cast the dataset from narrow format to wide format.
-8. Export the dataset created in step 7 as tidydata.txt.
+<ol>
+<li>Load raw data files using read.table(). Files loaded are:
+<ol>
+  <li> activity_labels.txt</li>
+  <li> features.txt</li>
+  <li> /test/subject_test.txt</li>
+  <li> /test/X_test.txt</li> 
+  <li> /test/y_test.txt</li>
+  <li> /train/subject_train.txt</li>
+  <li> /train/X_train.txt</li>
+  <li> /train/y_train.txt</li>
+</ol>
+</li>
+<li> Combine training subjects, labels and measurements into one dataset using cbind.
+<li> Combine test subjects, labels and measurements into one dataset using cbind
+<li> Combine the training dataset and test dataset created in step 2 and step 3 using rbind.
+<li> Melt the dataset created in step 4 from wide format to narrow format preparing for labeling activity and feature names in step 6.
+<li> Merge activity_labels and features datasets with tidy dataset to label activity and feature with descriptive names.
+<li> Extract data of mean and standard deviation features using grepl then cast the dataset from narrow format to wide format.
+<li> Export the dataset created in step 7 as tidydata.txt.
 
 ### Output
 
