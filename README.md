@@ -4,11 +4,12 @@ The **run_analysis.R** scripts create a tidy data set **tidydata.txt** using dat
 
 The run_analysis.R scripts perform the following tasks:
 <ol>
-<li>Load raw data files.</ol>
-<li>Combine datasets and reshape the combined dataset.</ol>
-<li>Label activity and feature with descriptive names.</ol>
-<li>Extract data of mean and standard deviation features and reshape the extracted dataset.</ol>
-<li>Export the extracted dataset as tidydata.txt.</ol>
+  <li>Load raw data files.</li>
+  <li>Combine datasets and reshape the combined dataset.</li>
+  <li>Label activity and feature with descriptive names.</li>
+  <li>Extract data of mean and standard deviation features and reshape the extracted dataset.</li>
+  <li>Export the extracted dataset as tidydata.txt.</li>
+</ol>
 
 
 ### How to run the scripts
@@ -23,55 +24,56 @@ install.packages("stringr")
 To generate tidydata.txt using run_analysis.R, perform the following steps:
 
 <ol>
-<li>Use source() to load run_analysis.R script file. You must provide a correct path to the script file. For example:
+  <li>Use source() to load run_analysis.R script file. You must provide a correct path to the script file. For example:
+  
+  ```s
+  source('~/TidyData/run_analysis.R')
+  ```
+  </li>
 
-```s
-source('~/TidyData/run_analysis.R')
-```
-</li>
-
-<li>Enter working directory when prompted and hit enter. Working directory should be the directory that contains test directory, train directory, features.txt, activity_labels.txt, etc.</li>
-
-<li>If the scripts run successfully, you should see below messages in the console. And tidydata.txt file should be created in the working directory.
-
-```s
-setting directory...
-installing library...
-loading files...
-combining training subjects, labels and measurements...
-combining test subjects, labels and measurements...
-combining training and test data...
-melting dataset from wide format to narrow format..
-merging activity_labels dataset with tidy dataset...
-merging tidy dataset with features dataset...
-extract data of mean and standard deviation features...
-creating a wide form of the dataset...
-writing the result dataset to a text file...
-result dataset tidydata.txt created
-```
-</li>
+  <li>Enter working directory when prompted and hit enter. Working directory should be the directory that contains test directory, train directory, features.txt, activity_labels.txt, etc.</li>
+  
+  <li>If the scripts run successfully, you should see below messages in the console. And tidydata.txt file should be created in the working directory.
+  
+  ```s
+  setting directory...
+  installing library...
+  loading files...
+  combining training subjects, labels and measurements...
+  combining test subjects, labels and measurements...
+  combining training and test data...
+  melting dataset from wide format to narrow format..
+  merging activity_labels dataset with tidy dataset...
+  merging tidy dataset with features dataset...
+  extract data of mean and standard deviation features...
+  creating a wide form of the dataset...
+  writing the result dataset to a text file...
+  result dataset tidydata.txt created
+  ```
+  </li>
+</ol>
 
 ### How the scripts work
 <ol>
-<li>Load raw data files using read.table(). Files loaded are:
-<ol>
-  <li> activity_labels.txt</li>
-  <li> features.txt</li>
-  <li> /test/subject_test.txt</li>
-  <li> /test/X_test.txt</li> 
-  <li> /test/y_test.txt</li>
-  <li> /train/subject_train.txt</li>
-  <li> /train/X_train.txt</li>
-  <li> /train/y_train.txt</li>
-</ol>
-</li>
-<li> Combine training subjects, labels and measurements into one dataset using cbind.</li>
-<li> Combine test subjects, labels and measurements into one dataset using cbind.</li>
-<li> Combine the training dataset and test dataset created in step 2 and step 3 using rbind.</li>
-<li> Melt the dataset created in step 4 from wide format to narrow format preparing for labeling activity and feature names in step 6.</li>
-<li> Merge activity_labels and features datasets with tidy dataset to label activity and feature with descriptive names.</li>
-<li> Extract data of mean and standard deviation features using grepl then cast the dataset from narrow format to wide format.</li>
-<li> Export the dataset created in step 7 as tidydata.txt.</li>
+  <li>Load raw data files using read.table(). Files loaded are:
+    <ol>
+      <li> activity_labels.txt</li>
+      <li> features.txt</li>
+      <li> /test/subject_test.txt</li>
+      <li> /test/X_test.txt</li> 
+      <li> /test/y_test.txt</li>
+      <li> /train/subject_train.txt</li>
+      <li> /train/X_train.txt</li>
+      <li> /train/y_train.txt</li>
+    </ol>
+  </li>
+  <li> Combine training subjects, labels and measurements into one dataset using cbind.</li>
+  <li> Combine test subjects, labels and measurements into one dataset using cbind.</li>
+  <li> Combine the training dataset and test dataset created in step 2 and step 3 using rbind.</li>
+  <li> Melt the dataset created in step 4 from wide format to narrow format preparing for labeling activity and feature names in step 6.</li>
+  <li> Merge activity_labels and features datasets with tidy dataset to label activity and feature with descriptive names.</li>
+  <li> Extract data of mean and standard deviation features using grepl then cast the dataset from narrow format to wide format.</li>
+  <li> Export the dataset created in step 7 as tidydata.txt.</li>
 </ol>
 
 ### Output
