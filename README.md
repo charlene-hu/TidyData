@@ -23,17 +23,16 @@ install.packages("stringr")
 
 To generate tidydata.txt using run_analysis.R, perform the following steps:
 
-<ol>
-  <li>Use source() to load run_analysis.R script file. You must provide a correct path to the script file. For example:
+1. Use source() to load run_analysis.R script file. You must provide a correct path to the script file. For example:
   
   ```s
   source('~/TidyData/run_analysis.R')
   ```
-  </li>
 
-  <li>Enter working directory when prompted and hit enter. Working directory should be the directory that contains test directory, train directory, features.txt, activity_labels.txt, etc.</li>
+2. Enter working directory when prompted and hit enter. Working directory should be the directory that contains test directory, train directory, features.txt, activity_labels.txt, etc.
   
-  <li>If the scripts run successfully, you should see below messages in the console. And tidydata.txt file should be created in the working directory.
+
+3. If the scripts run successfully, you should see below messages in the console. And tidydata.txt file should be created in the working directory.
   
   ```s
   setting directory...
@@ -50,8 +49,6 @@ To generate tidydata.txt using run_analysis.R, perform the following steps:
   writing the result dataset to a text file...
   result dataset tidydata.txt created
   ```
-  </li>
-</ol>
 
 ### How the scripts work
 <ol>
