@@ -4,7 +4,7 @@ Code Book
 
 The dataset in **tidydata.txt** is extracted from the raw data collected from the accelerometers from the Samsung Galaxy S smartphone [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ).  A full description is available at the site where the data was obtained: [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The scripts used to generate this dataset are in run_analysis.R. Please refer to README.md for details of how the scripts work.
 
-In the dataset, there are total 68 columns. The first column is subject, which are the volunteers in the experiments. The second column is activity, which are the activities volunteers performed during the experiments. Column 3 to 68 are measurement features, which are the mean of the meansurement of the feature for each activity and each subject. Features are normalized and bounded within [-1,1].
+In the dataset, there are total 68 columns. The first column is subject, which are the volunteers in the experiments. The second column is activity, which are the activities volunteers performed during the experiments. Column 3 to 68 are measurement features, which are the mean of the meansurement of the feature for each activity and each subject. Feature measurements are normalized and bounded within [-1,1].
 
 ##Dictionary##
 
@@ -24,7 +24,7 @@ LAYING
 ```
 
 **feature variables** 3 - 68
-feature variable name: numeric, normalized and bounded. Feature variable names from column 3 to column 68 are as follows:
+feature variable name: numeric, normalized and bounded within [-1,1].. Feature variable names from column 3 to column 68 are as follows:
 
 ```s
 fBodyAcc-mean()-X
